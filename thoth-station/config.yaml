@@ -23,8 +23,8 @@ branch-protection:
       restrictions:
         users: []
         teams:
-          - sourceops 
-      allow_force_pushes: false 
+          - sourceops
+      allow_force_pushes: false
       repos:
         test-infra:
           allow_force_pushes: true
@@ -72,8 +72,8 @@ tide:
     '*': https://prow.thoth-station.dev/pr
 
   merge_method:
-    AICoE: squash 
-    thoth-station: squash 
+    AICoE: squash
+    thoth-station: squash
 
   queries:
     - orgs:
@@ -130,7 +130,6 @@ tide:
           amun-api:
             required-contexts:
               - thoth-ci/pre-commit-check
-              - thoth-ci/pytest-check
               - thoth-ci/build-check
           amun-client:
             required-contexts:
@@ -170,7 +169,6 @@ tide:
           user-api:
             required-contexts:
               - thoth-ci/pre-commit-check
-              - thoth-ci/pytest-check
               - thoth-ci/build-check
           package-analyzer:
             required-contexts:
@@ -221,7 +219,7 @@ presubmits:
       trigger: "(?m)^/run (all|try-out-tekton),?(\\s+|$)"
       pipeline_run_spec:
         pipelineRef:
-          name: try-out-pipeline 
+          name: try-out-pipeline
         resources:
         - name: git
           resourceRef:
